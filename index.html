@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Face Recognition Attendance</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Face API -->
+  <script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <!-- JS -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>👨‍💻 Face Recognition Attendance</h1>
+    <p>Mark your attendance with just a smile 😊</p>
+  </header>
+
+  <main>
+    <div class="camera-card">
+      <video id="video" width="720" height="560" autoplay muted></video>
+      <canvas id="overlay"></canvas>
+    </div>
+
+    <div class="attendance-card">
+      <h2>📋 Attendance Log</h2>
+      <ul id="attendance-list"></ul>
+      <button id="clear-btn">Clear Attendance</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Built with ❤️ using face-api.js</p>
+  </footer>
+</body>
+</html>

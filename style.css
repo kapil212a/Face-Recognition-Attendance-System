@@ -1,0 +1,149 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  text-align: center;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  padding: 20px;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Main Layout */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Camera card */
+.camera-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.25);
+  background: white;
+  animation: fadeIn 1s ease-in-out;
+}
+#video, #overlay {
+  display: block;
+  border-radius: 16px;
+}
+
+/* Attendance card */
+.attendance-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  width: 350px;
+  max-height: 560px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.25);
+  text-align: left;
+  animation: fadeIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+.attendance-card h2 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Attendance List */
+#attendance-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  max-height: 480px;
+  padding-right: 5px;
+}
+#attendance-list li {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f7f9fc;
+  box-shadow: inset 0px 1px 3px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+#attendance-list li:hover {
+  background: #eaf4ff;
+}
+#attendance-list li::after {
+  content: "✔️";
+  margin-left: 10px;
+  color: green;
+}
+
+/* Clear button */
+#clear-btn {
+  margin-top: 15px;
+  padding: 10px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+#clear-btn:hover {
+  background: #e63939;
+}
+
+/* Custom scrollbar */
+#attendance-list::-webkit-scrollbar {
+  width: 8px;
+}
+#attendance-list::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+#attendance-list::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Footer */
+footer {
+  padding: 15px;
+  font-size: 0.85rem;
+  color: white;
+  background: rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

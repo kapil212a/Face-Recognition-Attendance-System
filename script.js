@@ -4,12 +4,12 @@ const attendanceList = document.getElementById("attendance-list");
 const clearBtn = document.getElementById("clear-btn");
 let detectedNames = new Set();
 
-// Load models
+// models
 async function loadModels() {
   await faceapi.nets.ssdMobilenetv1.loadFromUri("models");
   await faceapi.nets.faceLandmark68Net.loadFromUri("models");
   await faceapi.nets.faceRecognitionNet.loadFromUri("models");
-  console.log("✅ Models loaded");
+  console.log(" Models loaded");
   startCamera();
 }
 
@@ -20,7 +20,7 @@ function startCamera() {
     .catch(err => console.error("Camera error:", err));
 }
 
-// Load labeled images
+// Load images
 async function loadLabeledImages() {
   const labels = [
     { name: "Aman", file: "Aman.jpg" },
@@ -35,7 +35,7 @@ async function loadLabeledImages() {
         .withFaceDescriptor();
 
       if (!det) {
-        console.warn(`⚠️ No face detected in ${file}`);
+        console.warn(` No face detected in ${file}`);
         return null;
       }
 
@@ -44,7 +44,7 @@ async function loadLabeledImages() {
   ).then(results => results.filter(r => r !== null));
 }
 
-// Recognize faces when video plays
+// Recognize faces 
 video.addEventListener("play", async () => {
   const displaySize = { width: video.width, height: video.height };
   faceapi.matchDimensions(overlay, displaySize);
@@ -81,7 +81,7 @@ video.addEventListener("play", async () => {
 clearBtn.addEventListener("click", () => {
   attendanceList.innerHTML = "";
   detectedNames.clear();
-  console.log("🧹 Attendance cleared");
+  console.log("Attendance cleared");
 });
 
 loadModels();
